@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ef3996582361b53429c5eb9e07eaf50a
+guid: 9a0a60c298cc08044ad551d391bf421d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 32
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -110,12 +110,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NinjaSimple_0
+      name: Player_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 0
-        width: 11
+        x: 0
+        y: 16
+        width: 14
         height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d116b19317c11243b70e84dd8b0bd5e
-      internalID: -1035308980
+      spriteID: d47b856c286198948a42a77623c4be65
+      internalID: 1491072169
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NinjaSimple_1
+      name: Player_1
       rect:
         serializedVersion: 2
-        x: 18
-        y: 0
-        width: 11
-        height: 14
+        x: 16
+        y: 16
+        width: 14
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8032da0eef88044d9a95d749ef0a049
-      internalID: 184766247
+      spriteID: 010e30bef132c114d83de4ca8bb79e3f
+      internalID: -1941895026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 741ae0a496fdac54d9a4bfbb7e26c8c7
+      internalID: 1983577612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20c8168d646c189449cd5e3f50c84d5a
+      internalID: 1524815325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8274fdeb714165b44a77bc15e5c962d3
+      internalID: 434220437
       vertices: []
       indices: 
       edges: []
@@ -162,8 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      NinjaSimple_0: -1035308980
-      NinjaSimple_1: 184766247
+      Player_0: 1491072169
+      Player_1: -1941895026
+      Player_2: 1983577612
+      Player_3: 1524815325
+      Player_4: 434220437
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

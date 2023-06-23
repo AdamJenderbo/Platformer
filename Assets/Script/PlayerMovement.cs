@@ -2,44 +2,51 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Actor : WorldObject
+public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed;
-    public float jumpForce;
-    public float wallSlidingSpeed;
+    [SerializeField] float moveSpeed;
+    [SerializeField] float jumpForce;
+    [SerializeField] float wallSlidingSpeed;
 
-    protected Rigidbody2D rb;
-
-    BoxCollider2D boxCollider;
-
-    [SerializeField]
-    LayerMask groundLayer;
-
-    bool isWallSliding;
-
-    [SerializeField] Transform wallCheck;
+    [SerializeField] LayerMask groundLayer;
     [SerializeField] LayerMask wallLayer;
+    [SerializeField] Transform wallCheck;
 
-    bool isWallJumping;
     float wallJumpingDirection;
     float wallJumpingTime = 0.2f;
     float wallJumpingTimer;
     float wallJumpingDuration = 0.4f;
+
+    bool isWallSliding;
+    bool facingRight = false;
+    
+    BoxCollider2D boxCollider;
+    Rigidbody2D rb;
     Vector2 wallJumpingPower = new Vector2(8f, 16f);
 
-    bool facingRight = true;
-
-    protected override void Start()
+    private void Start()
     {
-        base.Start();
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         isWallSliding = false;
     }
 
-
-    protected virtual void Update()
+    private void Update()
     {
+        Stop();
+
+        if (Input.GetKey(KeyCode.A))
+            MoveLeft();
+
+        if (Input.GetKey(KeyCode.D))
+            MoveRight();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+            Jump();
+
+        if (Input.GetKeyUp(KeyCode.Space) && rb.velocity.y > 0)
+            rb.velocity = new Vector2(rb.velocity.x, 0);
+
         UpdateWallJump();
 
         if (facingRight && rb.velocity.x < 0f || !facingRight && rb.velocity.x > 0f)
@@ -99,7 +106,6 @@ public class Actor : WorldObject
         return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
     }
 
-
     private void UpdateWallJump()
     {
         if (isWallSliding)
@@ -114,9 +120,8 @@ public class Actor : WorldObject
 
     protected void WallJump()
     {
-        if(wallJumpingTimer > 0f)
+        if (wallJumpingTimer > 0f)
         {
-            isWallJumping = true;
             rb.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
             wallJumpingTimer = 0f;
             Invoke(nameof(StopWallJumping), wallJumpingDuration);
@@ -128,6 +133,5 @@ public class Actor : WorldObject
 
     private void StopWallJumping()
     {
-        isWallJumping = false;
     }
 }
